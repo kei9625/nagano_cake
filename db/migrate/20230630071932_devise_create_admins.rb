@@ -4,7 +4,7 @@ class DeviseCreateAdmins < ActiveRecord::Migration[6.1]
   def change
     create_table :admins do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
+      t.string :email,              null: false, default: "" #default: ""はサイトにアクセスしたら
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
@@ -31,9 +31,6 @@ class DeviseCreateAdmins < ActiveRecord::Migration[6.1]
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
-      t.string :email, null: false
-      t.string :encrypted_password, null: false
-
       t.timestamps null: false
     end
 
