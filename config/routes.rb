@@ -13,23 +13,29 @@ Rails.application.routes.draw do
   end
 
   scope module: :public do
+
     root to: 'homes#top'
     get '/about' => 'homes#about'
     get '/customers/sign_up' => 'registrations#new'
     get '/customers/sign_in' => 'sessions#new'
 
-    resources :customers, only: [:show, :edit, :update]
+    resources :customers, only: [:update]
+    get '/customers/my_page' => 'customers#show'
+    get '/customers/information/edit' => 'customers#show'
     get '/customers/confirm_withdraw' => 'customers#confirm_withdraw'
     patch '/customers/withdraw' => 'customers#withdraw'
-    get 
-    get 
 
     resources :items, only: [:index, :show]
+
+    resources :cart_items, only: [:index, :create, :update, :destroy]
+    delete '/cart_items/destroy_all' => 'cart_items#destroy_all'
+
     resources :orders, only: [:new, :create, :index, :show]
     post 'orders/check' => 'orders#check'
     get 'orders/thanks' => 'orders#thanks'
 
-    get 'cart_items/index'
+
+
 
   end
 
