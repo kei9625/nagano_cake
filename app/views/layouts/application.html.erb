@@ -10,6 +10,74 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <header>
+    <!--% if user_signed_in? %>-->
+
+    <li>
+      <%= link_to new_admin_session_path do %>
+      Admin ログイン（実装時に削除）
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to customers_my_page_path do %>
+      マイページ
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to items_path do %>
+      商品一覧
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to cart_items_path do %>
+      カート
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to destroy_customer_session_path, method: :delete do %>
+      ログアウト
+      <% end %>
+    </li>
+
+    <!--% else %>-->
+
+    <li>
+      <%= link_to new_admin_session_path do %>
+      Admin ログイン（実装時に削除）
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to about_path do %>
+      About
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to items_path do %>
+      商品一覧
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to new_customer_registration_path do %>
+      新規登録
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to new_customer_session_path do %>
+      ログイン
+      <% end %>
+    </li>
+
+  </header>
+
+<!--% end %>-->
   <body>
     <%= yield %>
   </body>
