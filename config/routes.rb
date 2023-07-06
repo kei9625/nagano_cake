@@ -29,9 +29,9 @@ devise_for :admin, skip: [:registrations, :passwords], controllers: {
     get '/about' => 'homes#about'
     get '/customers/my_page' => 'customers#show'
     get '/customers/information/edit' => 'customers#edit'
+    patch '/customers/information' => 'customers#update'
     get '/customers/confirm_withdraw' => 'customers#confirm_withdraw'
     patch '/customers/withdraw' => 'customers#withdraw'
-    resource :customers, only: [:update]
 
     resources :items, only: [:index, :show]
 
