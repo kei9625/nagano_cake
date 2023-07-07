@@ -9,4 +9,6 @@
   <p>電話番号 <%= f.text_field :telephone_number %></p>
   <p>メールアドレス <%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
   <%= f.submit '編集内容を保存' %>
+  <%= link_to customers_confirm_withdraw_path do %> 退会する <% end %>
   <% end %>
+
