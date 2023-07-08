@@ -13,15 +13,15 @@ devise_for :admin, skip: [:registrations, :passwords], controllers: {
 }
 
   namespace :admin do
-    get 'homes/top'
-    get 'items/index'
-    get 'items/new'
-    get 'items/show'
-    get 'items/edit'
-    get 'orders/show'
-    get 'customers/index'
-    get 'customers/show'
-    get 'customers/edit'
+
+    root to: 'homes#top'
+
+    resources :items, only: [:index, :new, :create, :show, :edit, :update]
+
+    resources :customers, only: [:index, :show, :edit, :update]
+
+    resources :orders, only: [:show]
+
   end
 
   scope module: :public do
