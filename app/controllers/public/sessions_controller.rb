@@ -27,8 +27,8 @@ class Public::SessionsController < Devise::SessionsController
       if @customer.is_deleted==true
         redirect_to new_customer_registration_path
       end
+      end
     end
-  end
 
 
   # GET /resource/sign_in

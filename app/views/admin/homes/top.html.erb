@@ -1,6 +1,11 @@
 <h1>Admin::Homes#top 管理者トップページ(注文履歴一覧)</h1>
 
-<% @order.each do |order| %>
-<%= link_to order.created_at, admin_order_path(order_id) %>
-<%= order.full_name %>
-<% amount %>
+<h1>admin top</h1>
+<% @orders.each do |order| %>
+<%= link_to order.created_at, admin_order_path(order.id) %>
+<%= order.customer.full_name %>
+
+<%= order.order_details.each do |order_details| %>
+
+<% end %>
+<% end %>
