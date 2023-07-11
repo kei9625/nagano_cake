@@ -5,16 +5,16 @@ class Admin::ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    if @item.save
-      redirect_to admin_items_path(@item.id)
+    @new_item = Item.new(item_params)
+    if @new_item.save
+      redirect_to admin_items_path(@new_item.id)
     else
       render :new
     end
   end
 
   def index
-    @all_item = Item.all(item_params)
+    @all_item = Item.all
   end
 
   def show
@@ -23,6 +23,15 @@ class Admin::ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to admin_items_path
+    else
+      render :edit
+    end
   end
 
   private

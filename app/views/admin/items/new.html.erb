@@ -1,6 +1,6 @@
 <h1>Admin::Items#New 商品新規登録</h1>
 
-<%= form_with model: @new_item do |f| %>
+<%= form_with model: @new_item, url: admin_items_path, method: :post do |f| %>
 
 <h2>商品新規登録</h2>
 

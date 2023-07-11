@@ -1,6 +1,19 @@
-<h1>Admin::Items#index</h1>
+<h1>Admin::Items#index　商品一覧</h1>
 
-<%= @all_item.each do |all| %>
+<table>
+    <thead>
+        <th>商品ID</th>
+        <th>商品名</th>
+        <th>税抜価格</th>
+    </thead>
+    <tbody>
+    <% @all_item.each do |all| %>
+    <tr>
+        <td><%= all.id %></td>
+        <td><%= link_to all.name, admin_item_path(all.id) %></td>
+        <td><%= all.price %></td>
+    </tr>
+    <% end %>
+    </tbody>
 
-
-<%= image_tag all.image, size: "300x300" %>
+</table>
