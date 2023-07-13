@@ -5,6 +5,7 @@
         <th>会員ID</th>
         <th>氏名</th>
         <th>メールアドレス</th>
+        <th>ステータス</th>
     </thead>
     <tbody>
     <% @all_customer.each do |all| %>
@@ -13,8 +14,15 @@
         <td><%= link_to all.full_name, admin_customer_path(all.id) %></td>
         <!--<td>%= link_to all.last_name+' '+all.first_name, admin_customer_path(all.id) %></td>-->
         <td><%= all.email %></td>
+        <td>
+            <% if all.is_deleted %>
+                <span>退会済み</span>
+            <% else %>
+                <span>有効</span>
+            <% end %>
+        </td>
     </tr>
-    <% end %>
+        <% end %>
     </tbody>
 
 </table>

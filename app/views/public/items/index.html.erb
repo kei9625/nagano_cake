@@ -1,2 +1,9 @@
-<h1>Public::Items#index</h1>
-<p>Find me in app/views/public/items/index.html.erb</p>
+<h1>Public::Items#index　商品一覧</h1>
+
+<table>
+  <% @all_item.each do |all| %>
+    <%= image_tag.all.get_image '200,200' %>
+    <%= all.name %>
+    <%= all.price %>
+  <% end %>
+</table>
