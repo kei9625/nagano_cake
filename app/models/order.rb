@@ -1,4 +1,2 @@
-class Order <
-  has_one_attached :image
-
+class Order < ApplicationRecord
 end

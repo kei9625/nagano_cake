@@ -8,4 +8,12 @@ class Item < ApplicationRecord
     end
       image.variant(resize_to_limit: [width, height]).processed
   end
+
+  def no_tax_price
+    price.to_s(:delimited)
+  end
+
+  def tax_price
+    (self.price * 1.1).round.to_s(:delimited)
+  end
 end

@@ -1,2 +1,12 @@
-<h1>Public::Items#show</h1>
-<p>Find me in app/views/public/items/show.html.erb</p>
+<h1>Public::Items#show　商品詳細</h1>
+
+<%= image_tag @item.get_image(300,300) %>
+
+<%= @item.name %>
+<%= @item.introduction %>
+<p><%= @item.tax_price %>円(税込)</p>
+
+<%= form_with model:@cart_item, url: cart_items_path do |f| %>
+    <%= f. %>
+    <%= f.submit "カートに入れる" %>
+<% end %>
