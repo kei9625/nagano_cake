@@ -6,7 +6,7 @@
 <%= @item.introduction %>
 <p><%= @item.tax_price %>円(税込)</p>
 
-<%= form_with model:@cart_item, url: cart_items_path do |f| %>
+<%= form_with model:@cart_item_new, url: cart_items_path do |f| %>
     <%= f.hidden_field :item_id, :value => @item.id %>
     <%= f.select :amount, *[1..5],{ include_blank: '選択してください' } %>
     <%= f.submit "カートに入れる" %>

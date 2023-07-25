@@ -1,5 +1,7 @@
 class Item < ApplicationRecord
   has_one_attached :image
+  has_many :cart_items
+  has_many :order_details
 
   def get_image(width, height)
     unless image.attached?
@@ -14,6 +16,6 @@ class Item < ApplicationRecord
   end
 
   def tax_price
-    (self.price * 1.1).round.to_s(:delimited)
+    (self.price * 1.1).floor.to_s(:delimited)
   end
 end
