@@ -18,4 +18,6 @@ class Item < ApplicationRecord
   def tax_price
     (self.price * 1.1).floor.to_s(:delimited)
   end
+
+
 end

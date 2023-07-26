@@ -23,10 +23,18 @@
               <%= f.hidden_field :item_id, :value => cart_item.item_id %>
               <%= f.select :amount, *[1..5] %>
               <%= f.submit "変更" %>
-          </td>
           <% end %>
+          </td>
           <td><%= cart_item.subtotal %></td>
+          <td><%= link_to "削除する", cart_item_path(cart_item.id), method: :delete %> </td>
       </tr>
   <% end %>
   </tbody>
 </table>
+
+<%= link_to "買い物を続ける", root_path %>
+<p>合計金額</p>
+
+<% if @cart_items.any? %>
+<%= link_to "注文情報入力に進む", new_order_path %>
+<% end %>
