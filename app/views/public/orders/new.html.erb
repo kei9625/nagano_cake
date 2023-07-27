@@ -10,9 +10,9 @@
 <%= f.label :payment_method_bank_transfer, "銀行振込" %><br>
 
 <h3>お届け先</h3>
-〒<%= @customer.postal_code %>
-<%= @customer.address %>
-<%= @customer.full_name %>
+〒<%= current_customer.postal_code %>
+<%= current_customer.address %>
+<%= current_customer.full_name %>
 
 <%= f.submit "確認画面へ進む" %>
 <% end %>
