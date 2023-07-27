@@ -15,12 +15,12 @@ class Public::OrdersController < ApplicationController
     @cart_items = current_customer.cart_items
     @order = Order.new(order_params)
     @order.shipping_fee = 800
-    
-    @order = Order.new(order_params)
-    @order.postal_code = current_customer.postal_code
-    @order.address = current_customer.address
-    @order.name = current_customer.first_name + current_customer.last_name
+    @total = 0
+    @order.full_name = current_customer.full_name
   end
+    # @order.postal_code = current_customer.postal_code
+    # @order.address = current_customer.address
+    # @order.full_name = current_customer.first_name + current_customer.last_name
 
   def thanks
 

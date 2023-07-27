@@ -12,11 +12,11 @@ class Item < ApplicationRecord
   end
 
   def no_tax_price
-    price.to_s(:delimited)
+    price.to_i
   end
 
   def tax_price
-    (self.price * 1.1).floor.to_s(:delimited)
+    (self.price * 1.1).floor.to_i
   end
 
 
