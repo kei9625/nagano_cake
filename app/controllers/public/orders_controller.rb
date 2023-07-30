@@ -6,6 +6,7 @@ class Public::OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    # byebug
     # binding.pry
       if @order.save
         # saveの瞬間にorderのIDが生成される
@@ -39,10 +40,11 @@ class Public::OrdersController < ApplicationController
 
   def index
     @orders = current_customer.orders
+    # byebug
   end
 
   def show
-
+    @order = Order.find(params[:id])
   end
 
   private
