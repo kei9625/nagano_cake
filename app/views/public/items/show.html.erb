@@ -4,10 +4,10 @@
 
 <%= @item.name %>
 <%= @item.introduction %>
-<p><%= @item.tax_price %>円(税込)</p>
+<p><%= @item.tax_price.to_s(:delimited) %>円(税込)</p>
 
-<%= form_with model:@cart_item_new, url: cart_items_path do |f| %>
+<%= form_with model:@cart_item_new, url: cart_items_path, local: true do |f| %>
     <%= f.hidden_field :item_id, :value => @item.id %>
-    <%= f.select :amount, *[1..5],{ include_blank: '選択してください' } %>
+    <%= f.select :amount, *[1..5],{ include_blank: '個数選択' } %>
     <%= f.submit "カートに入れる" %>
 <% end %>

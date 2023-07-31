@@ -14,7 +14,7 @@
   <tbody>
   <% @cart_items.each do |cart_item| %>
       <tr>
-          <td><%= image_tag cart_item.item.get_image(100,100) %>
+          <td><%= image_tag cart_item.item.get_image(50,50) %>
               <%= cart_item.item.name %></td>
           <td><%= cart_item.item.tax_price.to_s(:delimited) %></td>
           <td><%= cart_item.amount %></td>
@@ -46,7 +46,8 @@
 <%= @order.payment_method_i18n %>
 
 <h2>お届け先</h2>
-<p>〒<%= @order.postal_code + @order.address %><br>
+<p>
+  〒<%= @order.postal_code + @order.address %><br>
      <%= @order.full_name %></p>
 
 <%= form_with model: @order do |f| %>

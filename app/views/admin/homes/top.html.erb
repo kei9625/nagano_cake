@@ -1,11 +1,32 @@
 <h1>Admin::Homes#top 管理者トップページ(注文履歴一覧)</h1>
 
 <h1>admin top</h1>
-<% @orders.each do |order| %>
-<%= link_to order.created_at, admin_order_path(order.id) %>
-<%= order.customer.full_name %>
 
-<%= order.order_details.each do |order_details| %>
+<h2>注文履歴一覧</h2>
 
-<% end %>
-<% end %>
+<table>
+    <thead>
+        <tr>
+            <th>購入日時</th>
+            <th>購入者</th>
+            <th>注文個数</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @orders.each do |order| %>
+        <tr>
+            <td><%= link_to order.created_at.strftime('%Y/%m/%d %H:%M:%S'), admin_order_path(order.id) %></td>
+            <td><%= order.customer.full_name %></td>
+
+            <td>
+                <% @total_amount = 0 %>
+                <% order.order_details.each do |order_detail| %>
+                <% @total_amount = @total_amount + order_detail.amount %>
+                <% end %>
+                <%= @total_amount %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
