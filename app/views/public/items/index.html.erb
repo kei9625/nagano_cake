@@ -1,11 +1,16 @@
-<h1>Public::Items#index　商品一覧</h1>
-
-<table>
-  <% @all_item.each do |all| %>
-  <%= link_to item_path(all.id) do %>
-    <%= image_tag all.get_image(100,100) %>
+<div class="container">
+  <h2>商品一覧</h2>
+    <div class="row">
+      <div class= "col-md-4">
+      <% @all_item.each do |all| %>
+      <div style="width;25%">
+      <%= link_to item_path(all.id) do %>
+      <%= image_tag all.get_image(100,100) %>
+      <% end %><br>
+      <%= all.name %><br>
+      <%= all.no_tax_price.to_s(:delimited) %><br>
+      </div>
+    </div>
   <% end %>
-    <%= all.name %>
-    <%= all.no_tax_price.to_s(:delimited) %>
-  <% end %>
-</table>
+  </div>
+</div>

@@ -12,7 +12,7 @@
     <tr>
         <td><%= all.id %></td>
         <td><%= link_to all.name, admin_item_path(all.id) %></td>
-        <td><%= all.price %></td>
+        <td><%= all.price.to_s(:delimited) %></td>
     </tr>
     <% end %>
     </tbody>

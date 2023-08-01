@@ -1,7 +1,7 @@
 <h1>Admin::Items#show　商品詳細</h1>
 
 <% if @item.image.attached? %>
-<%= image_tag @item.image, size: "200x200" %>
+<%= image_tag @item.image, size: "100x100" %>
 <% else %>
 <p>no-image</p>
 <% end %>
@@ -19,7 +19,7 @@
 
   <tr>
     <td>税抜価格</td>
-    <td><%= @item.price %></td>
+    <td><%= @item.price.to_s(:delimited) %></td>
   </tr>
 
   <tr>
