@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   has_many :cart_items
   has_many :order_details
 
+  # validates :amount, numericality: { greater_than_or_equal_to: 1, message: "は1以上を選択してください" }
 
   validates :image, presence: true
   validates :name, presence: true

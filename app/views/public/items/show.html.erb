@@ -8,6 +8,6 @@
 
 <%= form_with model:@cart_item_new, url: cart_items_path, local: true do |f| %>
     <%= f.hidden_field :item_id, :value => @item.id %>
-    <%= f.select :amount, *[1..5],{ include_blank: '個数選択' } %>
+    <%= f.select :amount, *[1..5] %>
     <%= f.submit "カートに入れる" %>
 <% end %>

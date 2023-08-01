@@ -6,18 +6,23 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!--%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>-->
+    <script src="https://kit.fontawesome.com/8037678630.js" crossorigin="anonymous"></script>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <div class="collapse navbar-collapse" >
+      </div>
+    <!--<li>-->
+    <!--  %= link_to "Admin ログイン（実装時に削除）", new_admin_session_path %>-->
+    <!--</li>-->
 
-    <li>
-      <%= link_to "Admin ログイン（実装時に削除）", new_admin_session_path %>
-    </li>
-
-    <% if customer_signed_in? %>
-
+    <ul class="navbar-nav ml-auto">
+      <% if customer_signed_in? %>
     <li>
       <%= link_to "マイページ", customers_my_page_path %>
     </li>
@@ -74,6 +79,11 @@
       <%= link_to "ログイン", customer_session_path %>
     </li>
 <% end %>
+
+    </ul>
+    </div>
+    </div>
+  </nav>
   </header>
 
   <body>
