@@ -1,12 +1,32 @@
-<h1>Public::Customers#show マイページ</h1>
-
-<h3>登録情報</h3><p><%= link_to customers_information_edit_path do %>編集する<% end %></p>
+<div class="container">
+  <h3>登録情報</h3>
+  <div class="row">
+  <p><%= link_to customers_information_edit_path do %>編集する<% end %></p>
+  </div>
+  <div class="row">
   <p>氏名 <%= @customer.last_name %>&ensp;<%= @customer.first_name %></p>
+  </div>
+
+  <div class="row">
   <p>カナ <%= @customer.last_name_kana %>&ensp;<%= @customer.first_name_kana %></p>
+  </div>
+
+  <div class="row">
   <p>郵便番号 <%= @customer.postal_code %></p>
+  </div>
+
+  <div class="row">
   <p>住所<%= @customer.address %></p>
+  </div>
+
+  <div class="row">
   <p>電話番号 <%= @customer.telephone_number %></p>
+  </div>
+
+  <div class="row">
   <p> メールアドレス <%= @customer.email %></p>
+  </div>
 
 <h3>注文履歴</h3>
 <p><%= link_to orders_path do %>一覧を見る<% end %></p>
+</div>

@@ -1,36 +1,32 @@
-<h1>Admin::Customers#edit</h1>
-<h2><%= @customer.full_name %>さんの会員情報編集</h2>
+<div class="container">
+    <h3><%= @customer.full_name %>さんの会員情報編集</h3>
 
-<table>
-    <thead>
-        <th>会員ID</th>
-        <th>氏名</th>
-        <th>フリガナ</th>
-        <th>郵便番号</th>
-        <th>住所</th>
-        <th>電話番号</th>
-        <th>メールアドレス</th>
-        <th>会員ステータス</th>
-    </thead>
 
-    <tbody>
-      <%= form_with model: @customer, url: admin_customer_path(@customer.id), method: :patch do |f| %>
-    <tr>
-        <td><%= @customer.id %></td>
-        <td><%= f.text_field :last_name %> <%= f.text_field :first_name %></td>
-        <!--<td>%= link_to all.last_name+' '+all.first_name, admin_customer_path(all.id) %></td>-->
-        <td><%= f.text_field :last_name_kana %><%= f.text_field :first_name_kana %></td>
-        <td><%= f.text_field :postal_code %></td>
-        <td><%= f.text_field :address %></td>
-        <td><%= f.text_field :telephone_number %></td>
-        <td><%= f.text_field :email %></td>
-        <td>
-            <% if f.text_field :is_deleted %>
-                <span>退会済み</span>
-            <% else %>
-                <span>有効</span>
-            <% end %>
-        </td>
-        <%= f.submit "変更を保存" %>
-    </tr>
+<%= form_with model: @customer, url: admin_customer_path(@customer.id), method: :patch do |f| %>
+
+<div>会員ID<%= @customer.id %></div>
+
+<div>氏名<%= f.text_field :last_name %> <%= f.text_field :first_name %></div>
+
+<div>フリガナ<%= f.text_field :last_name_kana %><%= f.text_field :first_name_kana %></div>
+<!--  %= link_to all.last_name+' '+all.first_name, admin_customer_path(all.id) %>  -->
+
+<div>郵便番号<%= f.text_field :postal_code %></div>
+
+<div>住所<%= f.text_field :address %></div>
+
+<div>電話番号<%= f.text_field :telephone_number %></div>
+
+<div>メールアドレス<%= f.text_field :email %></div>
+
+<div>会員ステータス
+        <% if f.text_field :is_deleted %>
+            <span>退会済み</span>
+        <% else %>
+            <span>有効</span>
+        <% end %>
+</div>
+<div><%= f.submit "変更を保存" %></div>
     <% end %>
+
+    </div>
