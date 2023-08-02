@@ -1,5 +1,7 @@
-<h1>Public::Orders#check</h1>
-<h2>注文情報確認画面</h2>
+<div class="container">
+  <h2>注文情報確認画面</h2>
+  <div class="row">
+    <div class="col">
 
 <table>
   <thead>
@@ -25,7 +27,9 @@
 <% end %>
   </tbody>
 </table>
+</div>
 
+<div class="col">
 <table>
   <tr>
     <th>送料</th>
@@ -41,6 +45,9 @@
     <td><%= @total_due.to_s(:delimited)%></td>
   </tr>
 </table>
+</div>
+</div>
+
 
 <h2>支払方法</h2>
 <%= @order.payment_method_i18n %>
@@ -60,3 +67,4 @@
   <%= f.hidden_field :total_due, :value => @total_due %>
   <%= f.submit "注文を確定する" %>
 <% end %>
+</div>

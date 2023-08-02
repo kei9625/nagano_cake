@@ -1,7 +1,10 @@
-<h2>商品詳細</h2>
-
+<div class="container">
+    <h2>商品詳細</h2>
+  <div class="row">
+    <div class="col-lg-4">
 <%= image_tag @item.get_image(100,100) %>
-
+</div>
+<div class="col-lg-8">
 <%= @item.name %>
 <%= @item.introduction %>
 <p><%= @item.tax_price.to_s(:delimited) %>円(税込)</p>
@@ -11,3 +14,6 @@
     <%= f.select :amount, *[1..5] %>
     <%= f.submit "カートに入れる" %>
 <% end %>
+</div>
+</div>
+</div>

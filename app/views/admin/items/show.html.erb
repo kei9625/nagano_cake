@@ -1,12 +1,18 @@
-<h1>Admin::Items#show　商品詳細</h1>
+<div class="container">
+  <div class="row">
 
+<h1>商品詳細</h1>
+</div>
+<div class="row">
+<div class="col-lg-4">
 <% if @item.image.attached? %>
 <%= image_tag @item.image, size: "100x100" %>
 <% else %>
 <p>no-image</p>
 <% end %>
-
-<table>
+</div>
+<div class="col-lg-8">
+<table class="table table-striped">
   <tr>
     <td>商品名</td>
     <td><%= @item.name %></td>
@@ -25,5 +31,8 @@
   <tr>
     <td><%= link_to "編集する", edit_admin_item_path(@item.id) %></td>
   </tr>
-
 </table>
+
+</div>
+</div>
+</div>

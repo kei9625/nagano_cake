@@ -1,13 +1,29 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div class="row">
+    <h2>新規会員登録</h2>
+    </div>
 
 <%= form_with model: @customer, url: customer_registration_path do |f| %>
-  <h2>新規会員登録</h2>
   <%= render "public/shared/error_messages", resource: resource %>
+  <div class="row">
   <p>名前 <%= f.label :（姓） %><%= f.text_field :last_name %><%= f.label :（名） %><%= f.text_field :first_name %></p>
+  </div>
+
+  <div class="row">
   <p>フリガナ <%= f.label :（セイ） %><%= f.text_field :last_name_kana %><%= f.label :（メイ） %><%= f.text_field :first_name_kana %></p>
+  </div>
+
+  <div class="row">
   <p>郵便番号（ハイフンなし）<%= f.text_field :postal_code %></p>
+  </div>
+
+  <div class="row">
   <p>住所<%= f.text_field :address %></p>
+  </div>
+
+  <div class="row">
   <p>電話番号（ハイフンなし）<%= f.text_field :telephone_number %></p>
+  </div>
 
 
   <div class="field">
@@ -37,5 +53,5 @@
   こちら
   <% end %></p>
 <% end %>
-
+</div>
 <!--%= render "public/shared/links" %>-->

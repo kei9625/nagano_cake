@@ -1,9 +1,9 @@
-<h1>Admin::Items#New 商品新規登録</h1>
-
+<div class="container">
+  <div class="row">
+      <div class="col-lg-8">
 <%= form_with model: @new_item, url: admin_items_path, method: :post do |f| %>
 
 <h2>商品新規登録</h2>
-
 <h4>商品画像</h4>
 <%= f.file_field :image, accept: "image/*" %>
 
@@ -14,8 +14,12 @@
 <%= f.text_area :introduction %>
 
 <h4>税込価格</h4>
-<%= f.text_area :price %>
+<%= f.text_area :price %><br>
 
 <%= f.submit "新規登録" %>
 
 <% end %>
+
+</div>
+</div>
+</div>
